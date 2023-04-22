@@ -1,7 +1,7 @@
 import "./styles.scss"
 import { Link } from "react-router-dom"
 
-const Navmenu = ({ toggleNavMenu }: { toggleNavMenu: () => any }) => {
+const Navmenu = ({ toggleNavMenu }: { toggleNavMenu: () => void }) => {
   return (
     <div className="nav__menu">
       <div className="nav__menu__top" onClick={toggleNavMenu}>
