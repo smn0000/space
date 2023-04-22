@@ -1,0 +1,110 @@
+@use "../../sass/variables";
+
+.home {
+  position: relative;
+  background-image: url("../../assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 96px;
+
+  @media (max-width: 768px) {
+    background-image: url("../../assets/home/background-home-tablet.jpg");
+  }
+  @media (max-width: 425px) {
+    background-image: url("../../assets/home/background-home-mobile.jpg");
+  }
+}
+
+.home__left,
+.home__right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home__left {
+  width: 60%;
+}
+.home__right {
+  width: 40%;
+}
+
+.home__hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 5%;
+  max-width: 80%;
+  gap: 24px;
+
+  p {
+    color: variables.$secondary-color;
+    line-height: 32px;
+    font-size: 18px;
+    max-width: 70%;
+  }
+}
+
+.explore__button {
+  background-color: white;
+  border-radius: 50%;
+  height: 30vh;
+  aspect-ratio: 1;
+  transform: translateY(25%);
+
+  h4 {
+    color: black;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    padding-top: 96px;
+    text-align: center;
+  }
+
+  .home__left,
+  .home__right {
+    width: 100%;
+  }
+
+  .home__right {
+    height: 40%;
+  }
+
+  .home__hero {
+    max-width: none;
+    padding-inline: 0;
+    align-items: center;
+  }
+
+  .home__right {
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    height: 60%;
+  }
+
+  .explore__button {
+    height: 25vh;
+  }
+}
+
+@media (max-width: 470px) {
+  h1 {
+    font-size: 100px !important;
+  }
+  h5 {
+    font-size: 20px !important;
+  }
+  .explore__button {
+    height: 20vh;
+  }
+}
