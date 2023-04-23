@@ -5,14 +5,15 @@ import { useLocation } from "react-router-dom"
 import { useMediaQuery } from "usehooks-ts"
 import { useState } from "react"
 import { AnimatePresence } from "framer-motion"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
+import { useOnClickOutside } from "usehooks-ts"
 
 const Navbar = () => {
   const { pathname } = useLocation()
   const isMobile = useMediaQuery("(max-width:470px)")
   const [showNavmenu, setShowNavmenu] = useState(false)
   const [activePage, setActivePage] = useState<Number>()
-
+  const navRef = useRef(null)
   useEffect(() => {
     switch (pathname) {
       case "/":
@@ -36,9 +37,14 @@ const Navbar = () => {
   const toggleNavMenu = () => {
     setShowNavmenu((current) => !current)
   }
+
+  useOnClickOutside(navRef, () => setShowNavmenu(false))
+
   return (
-    <nav className="navbar">
-      {showNavmenu && <NavMenu toggleNavMenu={toggleNavMenu} />}
+    <nav className="navbar" ref={navRef}>
+      <AnimatePresence>
+        {showNavmenu && <NavMenu toggleNavMenu={toggleNavMenu} />}
+      </AnimatePresence>
 
       <div className="nav__left">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">

@@ -1,9 +1,16 @@
 import "./styles.scss"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 const Navmenu = ({ toggleNavMenu }: { toggleNavMenu: () => void }) => {
   return (
-    <div className="nav__menu">
+    <motion.div
+      className="nav__menu"
+      initial={{ translateX: "100%" }}
+      animate={{ translateX: 0 }}
+      exit={{ translateX: "100%" }}
+      transition={{ type: "just", duration: 0.15 }}
+    >
       <div className="nav__menu__top">
         <button onClick={toggleNavMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21">
@@ -38,7 +45,7 @@ const Navmenu = ({ toggleNavMenu }: { toggleNavMenu: () => void }) => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
