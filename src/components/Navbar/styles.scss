@@ -57,19 +57,16 @@
   position: relative;
   color: inherit;
   text-decoration: indianred;
+}
 
-  &[data-active="true"]::after {
-    content: "";
-    display: block;
-    height: 3px;
-    border-radius: 5px;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    bottom: calc(-100% + 12px);
-    transform: translateX(-50%);
-    background-color: white;
-  }
+.highlight__bar {
+  height: 3px;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  background-color: white;
 }
 
 .hamburger__container {

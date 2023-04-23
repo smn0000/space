@@ -51,18 +51,34 @@
   }
 }
 
+.button_wrapper {
+  position: relative;
+  margin-top: 25%;
+}
+
 .explore__button {
   background-color: white;
   border-radius: 50%;
   height: 30vh;
-  aspect-ratio: 1;
-  transform: translateY(25%);
+  width: 30vh;
+  z-index: 2;
+
+  position: relative;
 
   h4 {
     color: black;
   }
 }
 
+.circle__hover {
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  height: 30vh;
+  width: 30vh;
+  background-color: rgba($color: #fff, $alpha: 0.15);
+  z-index: 1;
+}
 @media (max-width: 1024px) {
   .home {
     flex-direction: column;
@@ -92,8 +108,19 @@
     height: 60%;
   }
 
+  .button_wrapper {
+    margin: 0;
+  }
+
   .explore__button {
     height: 25vh;
+    width: 25vh;
+    margin: 0;
+  }
+
+  .circle__hover {
+    height: 25vh;
+    width: 25vh;
   }
 }
 
@@ -104,7 +131,15 @@
   h5 {
     font-size: 20px !important;
   }
+  h4 {
+    font-size: 25px !important;
+  }
   .explore__button {
     height: 20vh;
+    width: 20vh;
+  }
+  .circle__hover {
+    height: 20vh;
+    width: 20vh;
   }
 }

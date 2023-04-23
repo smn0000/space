@@ -1,6 +1,21 @@
 import "./styles.scss"
+import { motion, useAnimate } from "framer-motion"
 
 const Home = () => {
+  const [scope, animate] = useAnimate()
+
+  const expandCircle = () => {
+    animate(
+      scope.current,
+      { scale: 1.5 },
+      { type: "spring", duration: 0.5, bounce: 0.6 }
+    )
+  }
+
+  const shrinkCircle = () => {
+    animate(scope.current, { scale: 1 }, { duration: 0.1 })
+  }
+
   return (
     <div className="home">
       <section className="home__left">
@@ -16,9 +31,17 @@ const Home = () => {
         </div>
       </section>
       <section className="home__right">
-        <button className="explore__button">
-          <h4>EXPLORE</h4>
-        </button>
+        <div className="button_wrapper">
+          <motion.button
+            className="explore__button"
+            onMouseEnter={expandCircle}
+            onMouseLeave={shrinkCircle}
+            whileTap={{ scale: 0.9, transition: { duration: 0.05 } }}
+          >
+            <h4>EXPLORE</h4>
+          </motion.button>
+          <div className="circle__hover" ref={scope}></div>
+        </div>
       </section>
     </div>
   )

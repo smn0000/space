@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
+import "./styles.scss"
 
 const Destination = () => {
   const { name } = useParams()
-  /*  console.log(param) */
 
   return <div>{name}</div>
 }

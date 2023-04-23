@@ -4,11 +4,34 @@ import NavMenu from "./Navmenu/NavMenu"
 import { useLocation } from "react-router-dom"
 import { useMediaQuery } from "usehooks-ts"
 import { useState } from "react"
+import { AnimatePresence } from "framer-motion"
+import { useEffect } from "react"
 
 const Navbar = () => {
   const { pathname } = useLocation()
   const isMobile = useMediaQuery("(max-width:470px)")
   const [showNavmenu, setShowNavmenu] = useState(false)
+  const [activePage, setActivePage] = useState<Number>()
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/":
+        setActivePage(0)
+        break
+      case "/destination":
+        setActivePage(1)
+        break
+      case "/crew":
+        setActivePage(2)
+        break
+      case "/technology":
+        setActivePage(3)
+        break
+
+      default:
+        break
+    }
+  }, [pathname])
 
   const toggleNavMenu = () => {
     setShowNavmenu((current) => !current)
@@ -41,40 +64,42 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <ul>
-              <li>
-                <NavItem
-                  id={0}
-                  text="HOME"
-                  to="/"
-                  isActive={pathname === "/" ? true : false}
-                />
-              </li>
-              <li>
-                <NavItem
-                  id={1}
-                  text="DESTINATION"
-                  to="/destiation"
-                  isActive={pathname === "/destination" ? true : false}
-                />
-              </li>
-              <li>
-                <NavItem
-                  id={2}
-                  text="CREW"
-                  to="/crew"
-                  isActive={pathname === "/crew" ? true : false}
-                />
-              </li>
-              <li>
-                <NavItem
-                  id={3}
-                  text="TECHNOLOGY"
-                  to="/technology"
-                  isActive={pathname === "/technology" ? true : false}
-                />
-              </li>
-            </ul>
+            <AnimatePresence>
+              <ul>
+                <li>
+                  <NavItem
+                    id={0}
+                    text="HOME"
+                    to="/"
+                    isActive={activePage === 0 ? true : false}
+                  />
+                </li>
+                <li>
+                  <NavItem
+                    id={1}
+                    text="DESTINATION"
+                    to="/destination"
+                    isActive={activePage === 1 ? true : false}
+                  />
+                </li>
+                <li>
+                  <NavItem
+                    id={2}
+                    text="CREW"
+                    to="/crew"
+                    isActive={activePage === 2 ? true : false}
+                  />
+                </li>
+                <li>
+                  <NavItem
+                    id={3}
+                    text="TECHNOLOGY"
+                    to="/technology"
+                    isActive={activePage === 3 ? true : false}
+                  />
+                </li>
+              </ul>
+            </AnimatePresence>
           )}
         </div>
       )}
