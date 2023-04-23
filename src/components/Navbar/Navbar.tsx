@@ -15,7 +15,8 @@ const Navbar = () => {
   const [activePage, setActivePage] = useState<Number>()
   const navRef = useRef(null)
   useEffect(() => {
-    switch (pathname) {
+    /* Only takes the first part of the path */
+    switch (pathname.replace(/(\/[^\/]*).*/, "$1")) {
       case "/":
         setActivePage(0)
         break
@@ -84,7 +85,7 @@ const Navbar = () => {
                   <NavItem
                     id={1}
                     text="DESTINATION"
-                    to="/destination"
+                    to="/destination/0"
                     isActive={activePage === 1 ? true : false}
                   />
                 </li>
@@ -92,7 +93,7 @@ const Navbar = () => {
                   <NavItem
                     id={2}
                     text="CREW"
-                    to="/crew"
+                    to="/crew/0"
                     isActive={activePage === 2 ? true : false}
                   />
                 </li>
@@ -100,7 +101,7 @@ const Navbar = () => {
                   <NavItem
                     id={3}
                     text="TECHNOLOGY"
-                    to="/technology"
+                    to="/technology/0"
                     isActive={activePage === 3 ? true : false}
                   />
                 </li>

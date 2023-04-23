@@ -17,7 +17,7 @@ const Home = () => {
   }
 
   return (
-    <div className="home">
+    <div className="page home">
       <section className="home__left">
         <div className="home__hero">
           <h5>SO, YOU WANT TO TRAVEL TO</h5>

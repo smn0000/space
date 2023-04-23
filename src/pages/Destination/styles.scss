@@ -1,3 +1,39 @@
-body {
-  background-color: black;
+@use "../../sass/variables";
+
+.destination {
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
+
+  @media (max-width: 768px) {
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+  }
+  @media (max-width: 425px) {
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.destination__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  span {
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: bold;
+  }
+}
+
+.destination__image {
+  max-width: 50%;
+}
+
+@media (max-width: 470px) {
+  .destination__heading {
+    font-size: 19px !important;
+  }
 }
