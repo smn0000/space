@@ -29,17 +29,17 @@ const Navmenu = ({ toggleNavMenu }: { toggleNavMenu: () => void }) => {
             </Link>
           </li>
           <li>
-            <Link to={"/destination"}>
+            <Link to={"/destination/0"}>
               <span>01</span>DESTINATION
             </Link>
           </li>
           <li>
-            <Link to={"/crew"}>
+            <Link to={"/crew/0"}>
               <span>02</span>CREW
             </Link>
           </li>
           <li>
-            <Link to={"/technology"}>
+            <Link to={"/technology/0"}>
               <span>03</span>TECHNOLOGY
             </Link>
           </li>
