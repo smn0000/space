@@ -15,14 +15,25 @@
   align-items: center;
   justify-content: start;
 }
+
+.destination__left,
+.destination__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .destination__heading {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: white;
+
+  margin-bottom: 15px;
 
   span {
-    padding: 18px;
+    padding-inline: 10px;
     color: rgba(255, 255, 255, 0.45);
     font-weight: bold;
   }
@@ -30,10 +41,100 @@
 
 .destination__image {
   max-width: 50%;
+  max-height: 40%;
+}
+.destination__name {
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.destination__info {
+  text-align: center;
+
+  margin-inline: 10%;
+  padding-bottom: 15px;
+  line-height: 25px;
+  font-size: 15px;
+  color: variables.$secondary-color;
+  border-bottom: 1px solid #383b4b;
+}
+
+.destination__numbers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.destinanion__distance,
+.destination__time {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  h6,
+  h4 {
+    padding-block: 5px;
+  }
 }
 
 @media (max-width: 470px) {
   .destination__heading {
-    font-size: 19px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .destination__heading {
+    margin-top: 90px;
+  }
+
+  .destination__info {
+    padding-bottom: 30px;
+  }
+
+  .destination__numbers {
+    padding-top: 15px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1024px) {
+  .destination {
+    flex-direction: row;
+  }
+  .destination__left {
+    width: 60%;
+    gap: 50px;
+  }
+  .destination__right {
+    width: 40%;
+    align-items: start;
+  }
+  .destination__heading {
+    width: 100%;
+    justify-content: start;
+    margin-left: 25%;
+  }
+  .destination__image {
+    max-width: 80%;
+    max-height: none;
+  }
+  .destination__info {
+    margin-left: 0;
+    margin-right: 20%;
+    text-align: left;
+  }
+  .destination__numbers {
+    justify-content: start;
+  }
+
+  .destinanion__distance,
+  .destination__time {
+    align-items: start;
+    margin-right: 20px;
   }
 }

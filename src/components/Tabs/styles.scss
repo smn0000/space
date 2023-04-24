@@ -1,0 +1,28 @@
+@use "../../sass/variables";
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+
+  @media (min-width: 1024px) {
+    gap: 45px;
+  }
+}
+
+.tab {
+  position: relative;
+  text-transform: uppercase;
+
+  .highlight__bar {
+    top: 125%;
+  }
+}
+
+.tab__text {
+  color: variables.$secondary-color;
+  &[data-active="true"] {
+    color: white;
+  }
+}

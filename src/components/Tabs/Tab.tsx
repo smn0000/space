@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import { useAnimate } from "framer-motion"
+import { useAnimate, motion } from "framer-motion"
 
-const NavItem = ({
-  to,
-  isActive,
+const Tab = ({
+  data,
   id,
-  text,
+  isActive,
 }: {
-  to: string
-  isActive: boolean
+  data: Destination
   id: number
-  text: string
+  isActive: boolean
 }) => {
   const highlightVariants = {
     idle: {
@@ -38,13 +35,24 @@ const NavItem = ({
 
   return (
     <Link
-      to={to}
-      className="nav__link"
+      to={`/destination/${id}`}
+      className=" tab"
       onMouseEnter={handleHoverShow}
       onMouseLeave={handleHoverHide}
-      onMouseDown={() => animate(scope.current, { scaleX: 1, opacity: 1 })}
+      onMouseDown={() =>
+        animate(scope.current, {
+          scaleX: 1,
+          opacity: 1,
+        })
+      }
     >
-      <span className="navbar__count">0{id}</span> {text}
+      <span
+        className="nav__text tab__text"
+        data-active={isActive ? "true" : "false"}
+      >
+        {data.name}
+      </span>
+
       <motion.div
         ref={scope}
         className="highlight__bar"
@@ -56,4 +64,4 @@ const NavItem = ({
   )
 }
 
-export default NavItem
+export default Tab
