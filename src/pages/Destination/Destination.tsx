@@ -27,6 +27,7 @@ const Destination = ({ data }: { data: Destination[] }) => {
         <img
           src={img}
           alt={`${pageData.name}`}
+          loading="lazy"
           className="destination__image"
         />
       </div>

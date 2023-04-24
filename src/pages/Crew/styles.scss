@@ -1,0 +1,77 @@
+@use "../../sass/variables";
+.crew {
+  background-image: url("/assets/crew/background-crew-desktop.jpg");
+
+  @media (max-width: 768px) {
+    background-image: url("/assets/crew/background-crew-tablet.jpg");
+  }
+  @media (max-width: 425px) {
+    background-image: url("/assets/crew/background-crew-mobile.jpg");
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+.crew__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: -1;
+}
+.crew__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crew__image {
+  max-width: 50vw;
+  padding-top: 25px;
+}
+
+.crew__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+
+  margin-bottom: 15px;
+  span {
+    padding-inline: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: bold;
+  }
+}
+
+.crew__role {
+  font-size: 16px !important;
+  text-transform: uppercase;
+  color: rgba($color: white, $alpha: 0.5);
+  margin-bottom: 10px;
+}
+
+.dot__select {
+  width: 80%;
+  padding-top: 25px;
+  border-top: 1px solid #383b4b;
+}
+
+.crew__bio {
+  text-align: center;
+  margin-inline: 10%;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  line-height: 25px;
+  font-size: 15px;
+  color: variables.$secondary-color;
+}
+
+.crew__name {
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
+}
