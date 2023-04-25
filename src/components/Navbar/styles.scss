@@ -92,12 +92,18 @@
   .nav__right {
     width: 80%;
     padding: 0;
-    background-color: transparent;
+
     backdrop-filter: none;
   }
 
   .navbar__count {
     display: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .nav__right {
+    background-color: transparent;
   }
 }
 

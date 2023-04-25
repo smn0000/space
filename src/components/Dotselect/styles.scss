@@ -9,5 +9,9 @@
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff80;
+  @media (min-width: 768px) {
+    height: 15px;
+    width: 15px;
+  }
 }

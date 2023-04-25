@@ -11,7 +11,7 @@ const Dotselect = ({
   return (
     <div className="dotselect">
       {data.map((el, id) => (
-        <Dot key={id} isActive={activePage === id ? true : false} />
+        <Dot key={id} id={id} isActive={activePage === id ? true : false} />
       ))}
     </div>
   )

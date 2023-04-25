@@ -20,18 +20,19 @@ const Crew = ({ data }: { data: CrewMember[] }) => {
   let img = new URL("/" + pageData.images.webp, import.meta.url).href
   return (
     <div className="page crew">
-      <div className="crew__left">
-        <div className="dot__select">
-          <Dotselect activePage={pageNumber} data={data} />
+      <h5 className="crew__heading">
+        <span>02</span> MEET YOUR CREW
+      </h5>
+      <div className="crew__wrapper">
+        <div className="crew__left">
+          <h4 className="crew__role">{pageData.role}</h4>
+          <h3 className="crew__name">{pageData.name}</h3>
+          <p className="crew__bio">{pageData.bio}</p>
+          <div className="dot__select">
+            <Dotselect activePage={pageNumber} data={data} />
+          </div>
         </div>
-        <h4 className="crew__role">{pageData.role}</h4>
-        <h3 className="crew__name">{pageData.name}</h3>
-        <p className="crew__bio">{pageData.bio}</p>
-
         <div className="crew__right">
-          <h5 className="crew__heading">
-            <span>02</span> MEET YOUR CREW
-          </h5>
           <img
             src={img}
             alt={`${pageData.name}`}
