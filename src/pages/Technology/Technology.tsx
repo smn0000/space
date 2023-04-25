@@ -31,7 +31,7 @@ const Technology = ({ data }: { data: Technology[] }) => {
         <div className="page__left">
           <Technologyselect data={data} activePage={pageNumber} />
           <div className="page__info">
-            <h6 className="page__falvourtext">THE TERMINOLOGY...</h6>
+            <h4 className="page__falvourtext">THE TERMINOLOGY...</h4>
             <h3 className="page__title">{pageData.name}</h3>
             <p className="page__description">{pageData.description}</p>
           </div>
