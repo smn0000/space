@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
+  position: relative;
 }
 
 .destination__left,
@@ -27,10 +28,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   color: white;
 
-  margin-bottom: 15px;
+  margin-block: 15px;
 
   span {
     padding-inline: 10px;
@@ -115,7 +115,6 @@
     align-items: start;
   }
   .destination__heading {
-    width: 100%;
     justify-content: start;
     margin-left: 25%;
   }
@@ -136,5 +135,17 @@
   .destination__time {
     align-items: start;
     margin-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .destination__heading {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+  }
+  .destination__image {
+    padding-top: 15%;
   }
 }
