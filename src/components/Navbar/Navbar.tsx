@@ -12,11 +12,11 @@ const Navbar = () => {
   const { pathname } = useLocation()
   const isMobile = useMediaQuery("(max-width:470px)")
   const [showNavmenu, setShowNavmenu] = useState(false)
-  const [activePage, setActivePage] = useState<Number>()
+  const [activePage, setActivePage] = useState<number>()
   const navRef = useRef(null)
   useEffect(() => {
     /* Only takes the first part of the path */
-    switch (pathname.replace(/(\/[^\/]*).*/, "$1")) {
+    switch (pathname.replace(/(\/[/]*).*/, "$1")) {
       case "/":
         setActivePage(0)
         break

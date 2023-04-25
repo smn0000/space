@@ -17,7 +17,7 @@ const Destination = ({ data }: { data: Destination[] }) => {
     setPageData(data[pageNumber])
   }, [pageNumber])
 
-  let img = new URL("/" + pageData.images.webp, import.meta.url).href
+  const img = new URL("/" + pageData.images.webp, import.meta.url).href
   return (
     <div className="page destination">
       <div className="destination__left">

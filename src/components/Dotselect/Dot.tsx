@@ -1,4 +1,4 @@
-import { motion, useAnimate } from "framer-motion"
+import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 const Dot = ({ isActive, id }: { isActive: boolean; id: number }) => {

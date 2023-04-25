@@ -17,7 +17,7 @@ const Crew = ({ data }: { data: CrewMember[] }) => {
     setPageData(data[pageNumber])
   }, [pageNumber])
 
-  let img = new URL("/" + pageData.images.webp, import.meta.url).href
+  const img = new URL("/" + pageData.images.webp, import.meta.url).href
   return (
     <div className="page crew">
       <h5 className="crew__heading">
