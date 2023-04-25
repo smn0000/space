@@ -10,7 +10,7 @@ const Dotselect = ({
 }) => {
   return (
     <div className="dotselect">
-      {data.map((el, id) => (
+      {data.map((_el, id) => (
         <Dot key={id} id={id} isActive={activePage === id ? true : false} />
       ))}
     </div>
