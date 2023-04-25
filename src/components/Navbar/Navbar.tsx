@@ -16,7 +16,7 @@ const Navbar = () => {
   const navRef = useRef(null)
   useEffect(() => {
     /* Only takes the first part of the path */
-    switch (pathname.replace(/(\/[/]*).*/, "$1")) {
+    switch (pathname.replace(/(\/[^\/]*).*/, "$1")) {
       case "/":
         setActivePage(0)
         break
