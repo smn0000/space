@@ -10,14 +10,20 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/crew/:id" element={<Crew data={data.crew} />} />
         <Route
-          path="/technology/:id"
+          path='/'
+          element={<Home />}
+        />
+        <Route
+          path='/crew/:id'
+          element={<Crew data={data.crew} />}
+        />
+        <Route
+          path='/technology/:id'
           element={<Technology data={data.technology} />}
         />
         <Route
-          path="/destination/:id"
+          path='/destination/:id'
           element={<Destination data={data.destinations} />}
         />
       </Routes>

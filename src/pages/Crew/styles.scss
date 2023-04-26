@@ -25,6 +25,13 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .page__wrapper {
+      grid-template-rows: 1fr 2fr;
+      height: 100%;
+    }
+  }
+
   @media (max-width: 625px) {
     .crew__name {
       font-size: 40px !important;
