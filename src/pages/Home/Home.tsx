@@ -32,19 +32,18 @@ const Home = () => {
         </div>
       </section>
       <section className="home__right">
-        <div className="button_wrapper">
+        <Link to="/destination/0" className="button_wrapper">
           <motion.button
             className="explore__button"
             onMouseEnter={expandCircle}
             onMouseLeave={shrinkCircle}
             whileTap={{ scale: 0.9, transition: { duration: 0.05 } }}
           >
-            <h4>
-              <Link to="/destination/0">EXPLORE</Link>
-            </h4>
+            <h4>EXPLORE</h4>
           </motion.button>
+
           <div className="circle__hover" ref={scope}></div>
-        </div>
+        </Link>
       </section>
     </div>
   )

@@ -20,29 +20,31 @@ const Destination = ({ data }: { data: Destination[] }) => {
   const img = new URL("/" + pageData.images.webp, import.meta.url).href
   return (
     <div className="page destination">
-      <div className="destination__left">
-        <h5 className="destination__heading">
-          <span>01</span> PICK YOUR DESTINATION
-        </h5>
-        <img
-          src={img}
-          alt={`${pageData.name}`}
-          loading="lazy"
-          className="destination__image"
-        />
-      </div>
-      <div className="destination__right">
-        <Tabs data={data} activePage={pageNumber}></Tabs>
-        <h2 className="destination__name">{pageData.name}</h2>
-        <p className="destination__info">{pageData.description}</p>
-        <div className="destination__numbers">
-          <div className="destinanion__distance">
-            <h6>AVG. DISTANCE</h6>
-            <h4>{pageData.distance}</h4>
-          </div>
-          <div className="destination__time">
-            <h6>EST. TRAVEL TIME</h6>
-            <h4>{pageData.travel}</h4>
+      <h5 className="page__heading">
+        <span>01</span> PICK YOUR DESTINATION
+      </h5>
+      <div className="page__wrapper">
+        <div className="page__right">
+          <img
+            src={img}
+            alt={`${pageData.name}`}
+            loading="lazy"
+            className="page__image"
+          />
+        </div>
+        <div className="page__left">
+          <Tabs data={data} activePage={pageNumber}></Tabs>
+          <h2 className="page__title">{pageData.name}</h2>
+          <p className="page__description">{pageData.description}</p>
+          <div className="destination__numbers">
+            <div className="destinanion__distance">
+              <h6>AVG. DISTANCE</h6>
+              <h4>{pageData.distance}</h4>
+            </div>
+            <div className="destination__time">
+              <h6>EST. TRAVEL TIME</h6>
+              <h4>{pageData.travel}</h4>
+            </div>
           </div>
         </div>
       </div>

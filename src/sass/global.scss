@@ -205,7 +205,7 @@ body {
 
 .page__heading {
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 10%;
   color: white;
   span {
@@ -218,7 +218,7 @@ body {
 .page__wrapper {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  height: 85%;
+  height: 90%;
   width: 100%;
 }
 
@@ -226,15 +226,9 @@ body {
   padding-left: 15%;
   padding-right: 7%;
   display: flex;
-  justify-content: space-between;
-  gap: 45px;
-}
-
-.page__info {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 25px;
+  flex-direction: column;
+  gap: 45px;
 }
 
 .page__falvourtext {
@@ -255,7 +249,6 @@ body {
 .page__right {
   display: flex;
   justify-content: center;
-  align-items: center;
 
   img {
     max-width: 100%;
@@ -263,6 +256,22 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .page__right {
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .crew__role {
+    font-size: 20px;
+  }
+  .page__title {
+    font-size: 40px !important;
+  }
+  .page__description {
+    font-size: 15px !important;
+  }
+}
 @media (max-width: 1024px) {
   .page {
     flex-direction: column;
@@ -283,12 +292,11 @@ body {
     gap: 15px;
   }
   .page__right {
-    order: -1;
-
     img {
-      width: 100%;
+      width: auto;
       max-width: none;
       max-height: none;
+      height: 100%;
     }
   }
 

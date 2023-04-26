@@ -7,8 +7,17 @@
   @media (max-width: 425px) {
     background-image: url("/assets/technology/background-technology-mobile.jpg");
   }
-}
 
-.technology__right {
-  justify-content: end !important;
+  .page__left {
+    order: 1;
+    @media (min-width: 1025px) {
+      flex-direction: row;
+      order: -1;
+    }
+  }
+  .page__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
