@@ -4,11 +4,15 @@ import Technologyselect from "../../components/TechnologySelect/Technologyselect
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useMediaQuery } from "usehooks-ts"
+import { usePanNavigate } from "../../usePanNavigate"
+import { motion } from "framer-motion"
+
 const Technology = ({ data }: { data: Technology[] }) => {
   const { pathname } = useLocation()
 
   const [pageNumber, setPageNumber] = useState(Number(pathname.slice(-1)))
   const [pageData, setPageData] = useState(data[pageNumber])
+  const handlePanNavigate = usePanNavigate(data.length)
   const isLandscape = useMediaQuery("(max-width:1024px)")
 
   useEffect(() => {
@@ -40,12 +44,14 @@ const Technology = ({ data }: { data: Technology[] }) => {
             <p className='page__description'>{pageData.description}</p>
           </div>
         </div>
-        <div className='page__right technology__right'>
+        <motion.div
+          onPanEnd={(_e, panInfo) => handlePanNavigate(panInfo.offset.x)}
+          className='page__right technology__right'>
           <img
             src={`${isLandscape ? landscape : portrait}`}
             alt=''
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   )

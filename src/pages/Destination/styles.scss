@@ -49,10 +49,15 @@
       margin-right: 20px;
     }
   }
-}
 
-@media (max-width: 768px) {
-  .destination__numbers {
-    flex-direction: column;
+  @media (max-width: 768px) {
+    .page__right {
+      img {
+        max-width: 80% !important;
+      }
+    }
+    .destination__numbers {
+      flex-direction: column;
+    }
   }
 }

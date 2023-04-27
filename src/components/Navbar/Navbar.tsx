@@ -1,7 +1,7 @@
 import "./styles.scss"
 import NavItem from "./NavItem"
 import NavMenu from "./Navmenu/NavMenu"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 import { useMediaQuery } from "usehooks-ts"
 import { useState } from "react"
 import { AnimatePresence } from "framer-motion"
@@ -51,7 +51,9 @@ const Navbar = () => {
         {showNavmenu && <NavMenu toggleNavMenu={toggleNavMenu} />}
       </AnimatePresence>
 
-      <div className='nav__left'>
+      <Link
+        to='/'
+        className='nav__left'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='48'
@@ -71,7 +73,7 @@ const Navbar = () => {
             />
           </g>
         </svg>
-      </div>
+      </Link>
       {!showNavmenu && (
         <div className='nav__right'>
           {isMobile ? (

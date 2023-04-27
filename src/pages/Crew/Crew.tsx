@@ -3,9 +3,12 @@ import "../page.scss"
 import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Dotselect from "../../components/Dotselect/Dotselect"
+import { motion } from "framer-motion"
 
+import { usePanNavigate } from "../../usePanNavigate"
 const Crew = ({ data }: { data: CrewMember[] }) => {
   const { pathname } = useLocation()
+  const handlePanNavigate = usePanNavigate(data.length)
 
   const [pageNumber, setPageNumber] = useState(Number(pathname.slice(-1)))
   const [pageData, setPageData] = useState(data[pageNumber])
@@ -19,6 +22,7 @@ const Crew = ({ data }: { data: CrewMember[] }) => {
   }, [pageNumber])
 
   const img = new URL("/" + pageData.images.webp, import.meta.url).href
+
   return (
     <div className='page crew'>
       <h5 className='page__heading'>
@@ -36,14 +40,16 @@ const Crew = ({ data }: { data: CrewMember[] }) => {
             />
           </div>
         </div>
-        <div className='page__right'>
+        <motion.div
+          onPanEnd={(_e, panInfo) => handlePanNavigate(panInfo.offset.x)}
+          className='page__right'>
           <img
             src={img}
             alt={`${pageData.name}`}
             loading='lazy'
             className='page__image'
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   )

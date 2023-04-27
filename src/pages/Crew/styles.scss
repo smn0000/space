@@ -12,7 +12,6 @@
   .crew__role {
     text-transform: uppercase;
     opacity: 0.5;
-    padding: 5px;
   }
 
   .dot__select {
@@ -26,12 +25,11 @@
   }
 
   @media (max-width: 1024px) {
-    .page__wrapper {
-      grid-template-rows: 1fr 2fr;
-      height: 100%;
+    .page__right {
+      max-height: 40vh;
     }
-    .crew__role {
-      font-size: 20px;
+    .page__left {
+      max-height: 40vh;
     }
   }
 
@@ -46,7 +44,16 @@
       order: 1;
     }
     .page__right {
-      border-bottom: 1px solid #ffffff80;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 85%;
+        border-bottom: 2px solid #ffffff2c;
+        border-radius: 10px;
+        bottom: 0;
+      }
     }
     .dot__select {
       padding: 0;
