@@ -35,6 +35,7 @@
 .page__right {
   display: flex;
   justify-content: center;
+  touch-action: none;
 
   img {
     pointer-events: none;
