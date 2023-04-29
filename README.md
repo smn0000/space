@@ -1,6 +1,7 @@
 # Space 
 Space themed website built with react
 
+
 ## Website
 https://szymonstrzelec.netlify.app/
 
@@ -13,7 +14,8 @@ Project created using:
 * Saas: 1.62.0
 * Framer Motion: 10.12.4
 
-
+## Design
+Used design from frontend mentor
 
 ## Features
 * Loading data from JSON file
